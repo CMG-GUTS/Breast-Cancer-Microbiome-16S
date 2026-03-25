@@ -6,7 +6,12 @@ The current data analysis was performed with an R version of 4.3.3, the `renv` w
 You can install all required R packages via `renv::restore()` or you might be prompted to do so at the beginning, see the [docs](https://rstudio.github.io/renv/articles/renv.html) for more information.
 
 ## Running the data-analysis workflow
-Make sure you have the folders `data` with the neccessary input files from the [paper]().
+Make sure you have the folders `data` with the neccessary input files from the [paper](). You can also manually edit the `R/00_main.R` file to change the filepaths.
 ```bash
 Rscript R/00_main.R
+```
+
+### Code that was used to for phylogenetic tree reconstruction
+```bash
+mpirun -n 20 phyml-mpi -i pseudomonas_BRAAF.phylip -d nt --model K80 --alpha 0.2890 -f 0.25,0.25,0.25,0.25 -c 4 -b 100
 ```

@@ -7,19 +7,24 @@ clean <- metagenomics$new(
 
 ## Alpha diversity
 #----------------------------------------------------------------------------------
+clean$metaData$response <- ifelse(clean$metaData$response == "high-responders", "good responder", 
+    ifelse(clean$metaData$response == "low-responders", "poor responder", 
+        ifelse(clean$metaData$response == "adjuvant", "surgery only", clean$metaData$response)))
+
+clean$metaData$response <- factor(clean$metaData$response, levels = c("surgery only", "good responder", "poor responder"))
 
 alpha_response <- clean$alpha_diversity(col_name = "response", metric = "shannon")$plot +
   labs(title = NULL,
    subtitle = NULL,
    y = "Shannon index",
    x = NULL) +
-  scale_colour_manual(name = "",
-                      values = c("adjuvant" = "#8DA0CB",
-                                 "high-responders" = "#E78AC3",
-                                 "low-responders" = "#E78AC3"),
-                      labels = c("adjuvant" = "adjuvant",
-                                "high-responders" = "neoadjuvant"),
-                      breaks = c("adjuvant", "high-responders")) +
+  scale_colour_manual(name = NULL,
+                      values = c("surgery only" = "#8DA0CB",
+                                 "good responder" = "#E78AC3",
+                                 "poor responder" = "#E78AC3"),
+                      labels = c("surgery only" = "surgery only",
+                                "good responder" = "neoadjuvant"),
+                      breaks = c("surgery only", "good responder")) +
   theme(legend.position = "bottom")
 
 ggsave(

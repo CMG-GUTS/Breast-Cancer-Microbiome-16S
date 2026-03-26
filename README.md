@@ -1,5 +1,5 @@
 # Introduction
-Data analysis of **Impact of neoadjuvant chemotherapy on local breast microbiota and macrophages in ER-positive breast cancer: shifts in density, composition, and links to treatment response**
+Data analysis of **Impact of neoadjuvant chemotherapy on local breast microbiota and macrophages in ER-positive breast cancer: shifts in density, composition, and links to treatment response** funded by Academisch Alliantie Fonds Maastricht UMC+ and Radboudumc.
 
 The current data analysis was performed with an R version of 4.3.3, the `renv` will try to sync the R package versions with your current R version. Unfortunately, using a `conda` environment doesn't work with all R packages, therefore I will leave the R version restrictions to the users end.
 

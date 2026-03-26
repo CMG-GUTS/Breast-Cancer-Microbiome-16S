@@ -10,12 +10,13 @@ set.seed(1970)
 dir.create("results", showWarnings = FALSE)
 
 # main input
-metadata_file <- "../data/metadata.tsv"
-biom_file <- "../data/biom_with_taxonomy.biom"
+metadata_file <- "metadata.tsv"
+biom_file <- "biom_with_taxonomy.biom"
 
 # pre-computed data
-qiime_wunifrac_dist <- "../data/distance_matrices/weighted_unifrac_distance_matrix.qza.txt"
-qiime_uunifrac_dist <- "../data/distance_matrices/unweighted_unifrac_distance_matrix.qza.txt"
+qiime_wunifrac_dist <- "distance_matrices/weighted_unifrac_distance_matrix.qza.txt"
+qiime_uunifrac_dist <- "distance_matrices/unweighted_unifrac_distance_matrix.qza.txt"
+phyml_tree_file <- "pseudomonas_BRAAF.phylip_phyml_tree.txt"
 
 ## Run scripts
 source("R/01_load.R")
